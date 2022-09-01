@@ -9,7 +9,6 @@ public node chevy_bbc_camshaft_builder {
     input exhaust_lobe_profile: lobe_profile;
     input lobe_separation: 114.0 * units.deg;
     input intake_lobe_center: lobe_separation;
-    input exhaust_lobe_center: lobe_separation;
     input advance: 0.0 * units.deg;
     input base_radius: 0.75 * units.inch;
 
@@ -51,7 +50,6 @@ public node chevy_bbc_camshaft_builder {
         .add_lobe(rot360 + intake_lobe_center + 7 * rot90)
         .add_lobe(rot360 + intake_lobe_center + 2 * rot90)
         .add_lobe(rot360 + intake_lobe_center + 4 * rot90)
-        .add_lobe(rot360 + intake_lobe_center + 1 * rot90)
 }
 
 public node vtwin90_camshaft_builder {
@@ -80,7 +78,6 @@ public node vtwin90_camshaft_builder {
     camshaft _exhaust_cam_1(params, lobe_profile: exhaust_lobe_profile)
 
     label rot90(90 * units.deg)
-    label rot360(360 * units.deg)
 
     _exhaust_cam_0
         .add_lobe(rot360 - exhaust_lobe_center)
